@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Home() {
   const [text, setText] = useState("");
@@ -44,21 +45,27 @@ export default function Home() {
         <div className="grid sm:grid-cols-2 gap-6">
           <ProjectCard
             title="Wordle-klon"
+            src="/Skärmbild 2025-10-28 111747.png"
             description="React, Node.js, TypeScript, MongoDB"
             link="https://wordle-game-git-main-tobias-larssons-projects.vercel.app/"
+            size="small"
           />
           <ProjectCard
             title="Kino-webbplats som grupparbete"
+            src="/Skärmbild 2025-10-28 114806.png"
             description="Node.js REST API & CMS-integration"
             link="https://kino-project-nextjs.vercel.app/"
+            size="large"
           />
           <ProjectCard
-            title="Dungeon Crawler"
+            title="Dungeon Crawler CLI"
+            src="/Skärmbild 2025-10-28 124839.png"
             description="Java"
             link="https://github.com/Tobias-hubs/dungeon-crawler"
           />
            <ProjectCard
             title="Hacker Escape Room"
+            src="/Skärmbild 2025-10-28 123713.png"
             description="JavaScript, SCSS"
             link="https://tobias-hubs.github.io/ESC-Hacker-Escape-Rooms-Tobias/"
           />
@@ -116,15 +123,35 @@ function ProjectCard({
   title,
   description,
   link,
+  src,
+  size = "small", 
 }: {
   title: string;
   description: string;
   link: string;
+  src?: string;
+  size?: "small" | "large";
 }) {
+  const sizeClasses = 
+  size === "large" 
+  ? "w-[400px] h-[250px]" 
+    : "w-[400px] h-[260px]";
   return (
     <div className="bg-[#161b22] p-5 rounded shadow hover:shadow-blue-500/20 transition text-left">
-      <h3 className="text-xl font-bold text-blue-300 mb-2">{title}</h3>
-      <p className="text-gray-400 text-sm mb-3">{description}</p>
+     <div className="flex flex-col sm:flex-row gap-6">
+      <h3 className="text-xl font-bold text-blue-300 mb-4">{title}</h3>
+      </div>
+        {src && (
+        <div className={`flex-shrink-0 ${sizeClasses} mb-5 relative`}>
+          <Image
+            src={src}
+            alt={title}
+            fill
+            className="rounded object-contain"
+          />
+        </div>
+      )}
+      <p className="text-gray-400 text-sm mb-6">{description}</p>
       <a href={link} className="text-blue-400 hover:underline">
         🔗 Visa projekt
       </a>
