@@ -62,6 +62,11 @@ export default function Home() {
             description="JavaScript, SCSS"
             link="https://tobias-hubs.github.io/ESC-Hacker-Escape-Rooms-Tobias/"
           />
+           <ProjectCard
+            title="Alla Repositories"
+            description="JavaScript, TypeScript, Java, Python, CSS, HTML, SCSS"
+            link="https://github.com/Tobias-hubs?tab=repositories"
+          />
         </div>
       </section>
 
