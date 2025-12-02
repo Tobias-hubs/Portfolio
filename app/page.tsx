@@ -86,7 +86,7 @@ export default function Home() {
           Jag heter Tobias Larsson och är systemutvecklare med fokus på Java och JavaScript. Jag bygger allt från frontend i React/TypeScript till backend i Node.js och Spring Boot, med databaser i SQL och MONGODB. Jag gillar att förstå helheten och skapa lösningar som är både skalbara och lätta att vidareutveckla.
         </p>
         <a
-  href="/Tobias Larsson CV.pdf"
+  href="/Tobias Larsson.pdf"
   target="_blank"
   rel="noopener noreferrer"
   className="mt-6 inline-block px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
