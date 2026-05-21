@@ -18,23 +18,82 @@ export default function Home() {
   }, []);
 
   return (
+    
     <main className="flex flex-col items-center text-center px-5">
+
+<header className="fixed top-0 w-full backdrop-blur border-b border-gray-800 z-50">
+  <nav className="max-w-6xl mx-auto flex justify-between p-4">
+    <span className="font-bold text-blue-400">
+      Tobias Larsson
+    </span>
+
+    <div className="flex gap-6 text-gray-300">
+      <a href="#projects">Projekt</a>
+      <a href="#about">Om mig</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+  </nav>
+</header>
+
       {/* Hero */}
-      <section className="min-h-screen flex flex-col justify-center items-center">
-        {/* <h1 className="text-5xl font-bold text-blue-400 mb-3">&lt;Tobias Larsson/&gt;</h1> */}
-        <h1 className="text-5xl font-bold text-blue-400 mb-3">
-          &lt;{text}&gt;<span className="animate-pulse">_</span>
-        </h1>
-        <p className="text-lg text-gray-400">
-          Systemutvecklare • Java • JavaScript
-        </p>
-        <a
-          href="#projects"
-          className="mt-8 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-        >
-          Se mina projekt
-        </a>
-      </section>
+      <div className="max-w-4xl w-full">
+      <section className="min-h-screen flex flex-col justify-center items-center text-center relative">
+  <div className="absolute inset-0 -z-10 overflow-hidden">
+    <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-400/5 blur-[180px]" />
+  </div>
+
+  <p className="text-blue-400 uppercase tracking-[0.3em] text-sm mb-4">
+    Portfolio
+  </p>
+
+  <h1 className="text-6xl sm:text-7xl font-extrabold tracking-tight text-white">
+    Tobias Larsson
+  </h1>
+
+  <p className="mt-6 text-xl text-gray-300 max-w-2xl leading-relaxed">
+    Systemutvecklare inom Java & JavaScript med fokus på fullstackutveckling,
+    moderna webbapplikationer och AI-integrerade lösningar.
+  </p>
+
+  <div className="flex gap-3 flex-wrap justify-center mt-8">
+    {["React", "Next.js", "TypeScript", "Java", "Spring Boot", "MongoDB", "Azure"].map((tech) => (
+      <span
+        key={tech}
+        className="px-4 py-2 rounded-full border border-blue-500/20 bg-[#161b22] text-blue-300 text-sm"
+      >
+        {tech}
+      </span>
+    ))}
+  </div>
+
+  <div className="flex gap-4 mt-10 flex-wrap justify-center">
+    <a
+      href="#projects"
+      className="px-6 py-3 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-all"
+    >
+      Se projekt
+    </a>
+
+    <a
+      href="https://github.com/Tobias-hubs"
+      target="_blank"
+      className="px-6 py-3 border border-gray-700 text-gray-300 rounded-xl hover:border-blue-500 hover:text-white transition-all"
+    >
+      GitHub
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/tobias-larsson-52b5531ba"
+      target="_blank"
+      className="px-6 py-3 border border-gray-700 text-gray-300 rounded-xl hover:border-blue-500 hover:text-white transition-all"
+    >
+      LinkedIn
+    </a>
+  </div>
+
+ 
+</section>
+     </div>
 
       {/* Projekt */}
       <section id="projects" className="max-w-4xl w-full py-16">
@@ -74,6 +133,14 @@ export default function Home() {
             description="JavaScript, TypeScript, Java, Python, CSS, HTML, SCSS"
             link="https://github.com/Tobias-hubs?tab=repositories"
           />
+           <ProjectCard
+            title="Azure document assistant / Internal document assistant"
+            src="/Lejon vison Azure document assistant.png"
+            description="TypeScript, React, Next.js, Microsoft Azure, OpenAI"
+            link="https://github.com/Tobias-hubs/azure-document-assistant/"
+            
+
+          />
         </div>
       </section>
 
@@ -82,9 +149,25 @@ export default function Home() {
         <h2 className="text-3xl font-semibold text-blue-400 mb-6 border-b border-gray-700 pb-2">
           👨‍💻 Om mig
         </h2>
-        <p className="text-gray-400 leading-relaxed">
-          Jag heter Tobias Larsson och är systemutvecklare med fokus på Java och JavaScript. Jag bygger allt från frontend i React/TypeScript till backend i Node.js och Spring Boot, med databaser i SQL och MONGODB. Jag gillar att förstå helheten och skapa lösningar som är både skalbara och lätta att vidareutveckla.
-        </p>
+         <p className="text-gray-400 leading-relaxed mb-4">
+    Jag är systemutvecklare med fokus på Java och JavaScript och bygger
+    fullstackapplikationer med moderna ramverk som React, Next.js och Spring Boot.
+  </p>
+
+  <p className="text-gray-400 leading-relaxed mb-4">
+    Jag har erfarenhet av att utveckla REST API:er, databashantering i både MongoDB och SQL
+    samt integrationer med externa tjänster och molnplattformar som Azure.
+  </p>
+
+  <p className="text-gray-400 leading-relaxed mb-4">
+    Jag har precis avslutat min utbildning till systemutvecklare (2026) på Lernia Yrkeshögskola
+    och har under utbildningen byggt flera projekt inom webbapplikationer, backend-system och AI-integrationer.
+  </p>
+
+  <p className="text-gray-400 leading-relaxed">
+    Jag trivs bäst när jag får arbeta med hela kedjan — från idé och arkitektur till färdig produkt
+    som är redo att användas i verkligheten.
+  </p>
         <a
   href="/Tobias Larsson.pdf"
   target="_blank"
@@ -105,7 +188,7 @@ export default function Home() {
           Vill du samarbeta eller se mer av mina projekt?
         </p>
         <a
-          href="mailto:tobbe-larsson@hotmail.com"
+          href="mailto:larsson_tobias@outlook.com"
           className="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
         >
           Skicka e-post
@@ -113,7 +196,7 @@ export default function Home() {
       </section>
 
       <footer className="text-center text-gray-600 py-6 text-sm border-t border-gray-800 w-full">
-        © 2025 Tobias | Byggd med ❤️ och Next.js
+       Tobias Larsson — Systemutvecklare inom Java & JavaScript
       </footer>
     </main>
   );
