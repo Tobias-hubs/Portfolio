@@ -1,28 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function Home() {
-  const [text, setText] = useState("");
-  const fullText = "Tobias Larsson/";
-
-  useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      setText(fullText.slice(0, i));
-      i++;
-      if (i > fullText.length) clearInterval(interval);
-    }, 100);
-    return () => clearInterval(interval);
-  }, []);
+ 
 
   return (
     
     <main className="flex flex-col items-center text-center px-5">
 
 <header className="fixed top-0 w-full backdrop-blur border-b border-gray-800 z-50">
-  <nav className="max-w-6xl mx-auto flex justify-between p-4">
+  <nav className="max-w-6xl mx-auto flex flex-wrap justify-between items-center p-4 gap-4">
     <span className="font-bold text-blue-400">
       Tobias Larsson
     </span>
@@ -101,7 +89,15 @@ export default function Home() {
           🚀 Projekt
         </h2>
 
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6 justify-items-center">
+          <ProjectCard
+            title="Azure document assistant / Internal document assistant"
+            src="/Lejon vison Azure document assistant.png"
+            description="TypeScript, React, Next.js, Microsoft Azure, OpenAI"
+            link="https://github.com/Tobias-hubs/azure-document-assistant/"
+            
+
+          />
           <ProjectCard
             title="Wordle-klon"
             src="/Skärmbild 2025-10-28 111747.png"
@@ -133,14 +129,7 @@ export default function Home() {
             description="JavaScript, TypeScript, Java, Python, CSS, HTML, SCSS"
             link="https://github.com/Tobias-hubs?tab=repositories"
           />
-           <ProjectCard
-            title="Azure document assistant / Internal document assistant"
-            src="/Lejon vison Azure document assistant.png"
-            description="TypeScript, React, Next.js, Microsoft Azure, OpenAI"
-            link="https://github.com/Tobias-hubs/azure-document-assistant/"
-            
-
-          />
+           
         </div>
       </section>
 
@@ -217,19 +206,20 @@ function ProjectCard({
 }) {
   const sizeClasses = 
   size === "large" 
-  ? "w-[400px] h-[250px]" 
-    : "w-[400px] h-[260px]";
+  ? "w-full max-w-[400px] h-[250px]" 
+    : "w-full max-w-[400px] h-[260px]";
   return (
-    <div className="bg-[#161b22] p-5 rounded shadow hover:shadow-blue-500/20 transition text-left">
+    <div className="w-full bg-[#161b22] p-5 rounded-xl shadow hover:shadow-blue-500/20 transition text-left">
      <div className="flex flex-col sm:flex-row gap-6">
       <h3 className="text-xl font-bold text-blue-300 mb-4">{title}</h3>
       </div>
         {src && (
-        <div className={`flex-shrink-0 ${sizeClasses} mb-5 relative`}>
+        <div className={`w-full ${sizeClasses} mb-5 relative`}>
           <Image
             src={src}
             alt={title}
             fill
+            sizes="(max-width: 640px) 100vw, 400px"
             className="rounded object-contain"
           />
         </div>
