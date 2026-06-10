@@ -1,7 +1,7 @@
 import "./globals.css";
-import { Fira_Code } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const firaCode = Fira_Code({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Tobias | Systemutvecklare",
@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="sv">
-      <body className={`${firaCode.className} bg-[#0d1117] text-gray-200`}>
+      <body className={inter.className}>
         {children}
       </body>
     </html>
