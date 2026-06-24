@@ -9,7 +9,7 @@ export default function Home() {
     
     <main className="flex flex-col items-center text-center px-5">
 
-<header className="fixed top-0 w-full backdrop-blur border-b border-gray-800 z-50">
+<header className="fixed top-0 w-full bg-black/80 border-b border-gray-800 z-50">
   <nav className="max-w-6xl mx-auto flex flex-wrap justify-between items-center p-4 gap-4">
     <span className="font-bold text-blue-400">
       Tobias Larsson
@@ -27,7 +27,7 @@ export default function Home() {
       <div className="max-w-4xl w-full">
       <section className="min-h-screen flex flex-col justify-center items-center text-center relative">
   <div className="absolute inset-0 -z-10 overflow-hidden">
-    <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-400/5 blur-[180px]" />
+    <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-blue-400/5 blur-[80px]" />
   </div>
 
   <p className="text-blue-400 uppercase tracking-[0.3em] text-sm mb-4">
