@@ -102,7 +102,7 @@ export default function Home() {
             title="Wordle-klon"
             src="/Skärmbild 2025-10-28 111747.png"
             description="React, Node.js, TypeScript, MongoDB"
-            link="https://wordle-game-git-main-tobias-larssons-projects.vercel.app/"
+            link="https://wordle-game-pearl.vercel.app/"
             size="small"
           />
           <ProjectCard
